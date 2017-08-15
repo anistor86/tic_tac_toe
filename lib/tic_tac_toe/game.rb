@@ -1,5 +1,5 @@
 module TicTacToe
-  class game
+  class Game
     attr_reader :players, :board, :current_player, :other_player
     def initialize(players, board = Board.new)
       @players = players
@@ -31,7 +31,7 @@ module TicTacToe
         puts ""
         puts solicite_move
         x, y = get_move
-        boards.set_cell(x, y, current_player.color)
+        board.set_cell(x, y, current_player.color)
         if board.game_over
           puts game_over_message
           board.formatted_grid
@@ -57,5 +57,7 @@ module TicTacToe
         "9" => [2,2]
       }
       mapping[human_move]
+    end
+
   end
 end
