@@ -5,7 +5,7 @@ module TicTacToe
     context "#initialize" do
 
       it "raises and exception when initialized with {}" do
-        expect { Player.new({}) }.to raise_error
+        expect { Player.new({}) }.to raise_error(KeyError)
       end
 
       it "does not raise en error when initialized with a valid input hash" do
@@ -19,7 +19,7 @@ module TicTacToe
       it "returns the color" do
         input = { color: "X", name: "Someone" }
         player = Player.new(input)
-        explect(player.color).to eq "X"
+        expect(player.color).to eq "X"
       end
     end
 
